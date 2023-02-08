@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="grid" style="grid-template-rows: 510px 90px">
+    <div class="grid" style="grid-template-rows: 527px 90px">
       <div class="flex">
         <side-bar></side-bar>
         <router-view class="h-full w-full bg-dark" />
