@@ -283,6 +283,13 @@ export default {
           artist:
             "The hottest songs you need to listen to right now. Cover: Epik High",
           link: "/playlist/its-a-hit"
+        },
+        {
+          src: "https://i.scdn.co/image/ab67706f00000002b80517de954ff3164e3bb387",
+          title: "Mood.",
+          artist:
+            "The R&B and good vibe tracks for your current mood. Cover: Lizzo, SZA",
+          link: "/playlist/mood"
         }
       ]
     };
