@@ -3,7 +3,12 @@
     <div class="grid" style="grid-template-rows: 527px 90px">
       <div class="flex">
         <side-bar></side-bar>
-        <router-view class="h-full w-full bg-dark" />
+        <div
+          class="w-full h-full relative overflow-y-scroll"
+          style="background-image: linear-gradient(to bottom, #222222, #121212)"
+        >
+          <router-view class="mb-6" />
+        </div>
       </div>
       <playing-bar></playing-bar>
     </div>
@@ -21,26 +26,5 @@ export default {
 };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<style></style>
 

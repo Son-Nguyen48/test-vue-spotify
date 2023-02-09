@@ -1,5 +1,7 @@
 <template>
-  <div>This is MainView</div>
+  <div class="w-full">
+    <slot></slot>
+  </div>
 </template>
 
 <script>

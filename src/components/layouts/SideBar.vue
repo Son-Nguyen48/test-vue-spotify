@@ -5,7 +5,7 @@
 
       <div class="pl-6 py-6">
         <span>
-          <router-link to="/">
+          <router-link to="/" @click.native="setIdRouter(0)">
             <img
               src="../../../public/Spotify_Logo_CMYK_Black.png"
               alt="logo"
@@ -90,7 +90,7 @@
         >
           <span
             v-html="downloadButton.icon"
-            class="h-9 w-9 mr-4 flex items-center justify-center rounded"
+            class="h-9 w-9 flex items-center justify-center rounded"
           >
           </span>
           <p class="text-white font-semibold">{{ downloadButton.name }}</p>

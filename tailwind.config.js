@@ -12,7 +12,8 @@ module.exports = {
         lightest: "#B3B3B3",
         darkest: "#191414",
         nearly__lightest: "#181818",
-        leanerBlue: "linear-gradient(135deg, #450af5, #c4efd9)"
+        leanerBlue: "linear-gradient(135deg, #450af5, #c4efd9)",
+        hoverButton: "#3e3e3e"
       }
     }
   },
