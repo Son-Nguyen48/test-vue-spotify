@@ -127,6 +127,26 @@
         </div>
       </section>
       <section>
+        <!-- This is the More like Hit Rewind playlists -->
+
+        <base-header :name="'More like Hit Rewind'"></base-header>
+
+        <!-- This is list recent songs -->
+        <div
+          class="grid gap-6 px-8"
+          style="
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            min-width: 410px;
+          "
+        >
+          <base-card
+            v-for="recent in hitRewinds"
+            :key="recent.title"
+            :card-info="recent"
+          ></base-card>
+        </div>
+      </section>
+      <section>
         <!-- This is the Recently played -->
 
         <base-header :name="'Artists'"></base-header>
@@ -290,6 +310,40 @@ export default {
           artist:
             "The R&B and good vibe tracks for your current mood. Cover: Lizzo, SZA",
           link: "/playlist/mood"
+        }
+      ],
+      hitRewinds: [
+        {
+          src: "https://i.scdn.co/image/ab67706f00000002ba77a2166a7b66e9a300ffaa",
+          title: "Best of the Decade For You",
+          artist:
+            "A few of the many great songs from the past 10 years in a playlist tuned for you.",
+          link: "/playlist/best-of-decade"
+        },
+        {
+          src: "https://i.scdn.co/image/ab67706f000000029cf3aebc8a3b866a76470aac",
+          title: "Top Hits of 2015",
+          artist:
+            "Rewind and rediscover big songs of 2015. Cover: Justin Bieber.",
+          link: "/playlist/top-hits-of-2015"
+        },
+        {
+          src: "https://i.scdn.co/image/ab67706f000000029778672fbee3dc20620b1897",
+          title: "Top Hits of 2014",
+          artist: "Rewind and rediscover big songs of 2014. Cover: Sia.",
+          link: "/playlist/top-hits-of-2014"
+        },
+        {
+          src: "https://i.scdn.co/image/ab67706f000000028663be06e69f49628cf83a56",
+          title: "The Party Hits of the 2010s",
+          artist: "Party like it’s one of the years between 2010-2019.",
+          link: "/playlist/the-party-hits-of-the-2010s"
+        },
+        {
+          src: "https://i.scdn.co/image/ab67706f00000002fee6d5f133913e4855da6ee1",
+          title: "The Ultimate Hit Mix",
+          artist: "Mixing the decades: 1990s, 2000s, 2010s and 2020s.",
+          link: "/playlist/the-ultimate-hit-mix"
         }
       ]
     };

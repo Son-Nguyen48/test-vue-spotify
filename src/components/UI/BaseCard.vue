@@ -43,10 +43,14 @@
           isRoundedFull === true ? 'rounded-full' : 'rounded'
         } `"
       />
-      <h1 class="text-sm font-semibold text-white tracking-wide">
+      <h1
+        class="text-sm overflow-ellipsis overflow-hidden whitespace-nowrap font-semibold text-white tracking-wide"
+      >
         {{ cardInfo.title }}
       </h1>
-      <h2 class="text-xs text-lightest tracking-wide">
+      <h2
+        class="text-xs overflow-ellipsis overflow-hidden whitespace-nowrap text-lightest tracking-wide"
+      >
         {{ cardInfo.artist }}
       </h2>
     </router-link>

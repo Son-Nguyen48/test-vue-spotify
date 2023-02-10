@@ -54,13 +54,79 @@
         </div>
       </div>
     </the-header>
+
+    <!-- This is the Search result history  -->
+
+    <section>
+      <div
+        class="grid"
+        style="
+          grid-template-columns: repeat(5, minmax(0, 1fr));
+          min-width: 410px;
+        "
+      >
+        <base-card
+          v-for="history in historys"
+          :key="history.title"
+          :card-info="history"
+        >
+          <div
+            class="absolute top-2 right-2 h-8 w-8 bg-dark opacity-60 rounded-full flex items-center justify-center"
+          >
+            <span
+              ><svg
+                role="img"
+                height="16"
+                width="16"
+                aria-hidden="true"
+                viewBox="0 0 16 16"
+                data-encore-id="icon"
+                class="Svg-sc-ytk21e-0 uPxdw"
+                style="filter: brightness(0) invert(1)"
+              >
+                <path
+                  d="M1.47 1.47a.75.75 0 011.06 0L8 6.94l5.47-5.47a.75.75 0 111.06 1.06L9.06 8l5.47 5.47a.75.75 0 11-1.06 1.06L8 9.06l-5.47 5.47a.75.75 0 01-1.06-1.06L6.94 8 1.47 2.53a.75.75 0 010-1.06z"
+                ></path></svg
+            ></span>
+          </div>
+        </base-card>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
 import TheHeader from "../layouts/TheHeader.vue";
+import BaseCard from "../UI/BaseCard.vue";
 export default {
-  components: { TheHeader }
+  data() {
+    return {
+      historys: [
+        {
+          src: "https://i.scdn.co/image/ab67616d00001e020f3abcbf0e79cacac2df44cc",
+          title: "City Girl",
+          artist: "Flux Vortex",
+          name: "Playlist",
+          link: "/playlist/flux-vortex"
+        },
+        {
+          src: "https://seeded-session-images.scdn.co/v1/img/track/0JkBihR0VtIg6Q2TEfIvKv/en",
+          title: "Not Your Baby Radio",
+          artist: "By Spotify",
+          name: "Podcasts",
+          link: "/playlist/podcasts"
+        },
+        {
+          src: "https://seed-mix-image.spotifycdn.com/v6/img/artist/00FQb4jTyendYWaN8pK0wa/en/default",
+          title: "Lana Del Rey Mix",
+          artist: "Conan Gray, Montell Fish, Mazzy Star and more",
+          name: "Artist",
+          link: "/playlist/lana-del-rey-mix"
+        }
+      ]
+    };
+  },
+  components: { TheHeader, BaseCard }
 };
 </script>
 
