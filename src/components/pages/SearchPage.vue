@@ -58,8 +58,9 @@
     <!-- This is the Search result history  -->
 
     <section>
+      <base-header :name="'Recent searches'"></base-header>
       <div
-        class="grid"
+        class="grid px-8 gap-4"
         style="
           grid-template-columns: repeat(5, minmax(0, 1fr));
           min-width: 410px;
@@ -92,12 +93,48 @@
         </base-card>
       </div>
     </section>
+
+    <section>
+      <base-header :name="'Duyệt tìm tất cả'"></base-header>
+
+      <div
+        class="grid px-6 gap-y-5 mb-4"
+        v-for="index in 10"
+        :key="index"
+        style="
+          grid-template-columns: repeat(5, minmax(0, 1fr));
+          min-width: 193px;
+        "
+      >
+        <!-- The list base card -->
+        <div
+          v-for="recent in categorys"
+          :key="recent.title"
+          class="flex justify-center"
+        >
+          <router-link
+            :to="recent.link"
+            class="h-48 w-48 rounded-lg relative block overflow-hidden"
+            :style="`max-width: 242px; background-color: ${recent.colorCode};`"
+          >
+            <img
+              :src="`${recent.imgUrl}`"
+              alt="img"
+              class="absolute top-11 left-7"
+              style="transform: rotate(25deg) translate(18%, -2%) scale(50%)"
+            />
+            <p class="p-4 text-2xl font-bold">{{ recent.title }}</p>
+          </router-link>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
 import TheHeader from "../layouts/TheHeader.vue";
 import BaseCard from "../UI/BaseCard.vue";
+import BaseHeader from "../UI/BaseHeader.vue";
 export default {
   data() {
     return {
@@ -123,10 +160,59 @@ export default {
           name: "Artist",
           link: "/playlist/lana-del-rey-mix"
         }
+      ],
+      colors: [
+        { id: "orange", codeColor: "#E13300" },
+        { id: "darkblue", codeColor: "#1E3264" },
+        { id: "pink", codeColor: "#E8115B" },
+        { id: "neargreen", codeColor: "#608108" },
+        { id: "green", codeColor: "#148A08" },
+        { id: "blue", codeColor: "#0D73EC" }
+      ],
+      categorys: [
+        {
+          id: "podcasts",
+          colorCode: "#E13300",
+          title: "Podcasts",
+          link: "/genre/podcasts",
+          imgUrl:
+            "https://i.scdn.co/image/567158eb895ad26718a814345af0fc43ee785ec5"
+        },
+        {
+          id: "madeforyou",
+          colorCode: "#1E3264",
+          title: "Made For You",
+          link: "/genre/madeforyou",
+          imgUrl: "https://t.scdn.co/images/ea364e99656e46a096ea1df50f581efe"
+        },
+        {
+          id: "newreleases",
+          colorCode: "#E8115B",
+          title: "New releases",
+          link: "/genre/newreleases",
+          imgUrl:
+            "https://i.scdn.co/image/ab67706f000000027ea4d505212b9de1f72c5112"
+        },
+        {
+          id: "vietnamesemusic",
+          colorCode: "#608108",
+          title: "Vietnamese Music",
+          link: "/genre/vietnamesemusic",
+          imgUrl:
+            "https://i.scdn.co/image/ab67fb8200005caf55dfb53724670e4db6cee444"
+        },
+        {
+          id: "pop",
+          colorCode: "#148A08",
+          title: "Pop",
+          link: "/genre/pop",
+          imgUrl:
+            "https://i.scdn.co/image/ab67fb8200005cafa862ab80dd85682b37c4e768"
+        }
       ]
     };
   },
-  components: { TheHeader, BaseCard }
+  components: { TheHeader, BaseCard, BaseHeader }
 };
 </script>
 

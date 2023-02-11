@@ -1,6 +1,7 @@
 <template>
   <div
-    class="sticky top-0 w-full h-16 flex items-center justify-between px-8 py-4 z-10 bg-dark"
+    
+    class="top-bar sticky top-0 w-full h-16 flex items-center justify-between px-8 py-4 z-10 bg-transparent"
   >
     <!-- This is the two nav button  -->
 
@@ -21,7 +22,7 @@
 
     <!-- This is the upgrade and user button  -->
 
-    <div class="flex">
+    <div id="bla" class="flex">
       <button
         class="text-xs font-bold text-white rounded-3xl bg-light tracking-wider mr-4"
         style="border: 1px solid white; padding: 3px 15px"

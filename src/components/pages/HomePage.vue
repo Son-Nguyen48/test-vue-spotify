@@ -348,7 +348,15 @@ export default {
       ]
     };
   },
-  components: { TheHeader, MainView, BaseHeader, BaseCard }
+  components: { TheHeader, MainView, BaseHeader, BaseCard },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll(event) {
+      console.log(event);
+    }
+  }
 };
 </script>
 
