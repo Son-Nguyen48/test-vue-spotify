@@ -66,12 +66,12 @@ export default {
 <style scoped>
 .play__button--green {
   opacity: 0;
-  transform: translate(-7%, 10%);
+  transform: translate(-7%, 50%);
   transition: transform 0.8s ease;
 }
 
 .song:hover .play__button--green {
-  transform: translate(-7%, -5%);
+  transform: translate(-7%, 26%);
   opacity: 1;
 }
 
