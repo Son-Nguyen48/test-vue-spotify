@@ -5,7 +5,7 @@
         <li
           v-for="libraryMenu in libraryMenus"
           :key="libraryMenu.id"
-          class="text-white inline-block"
+          class="text-white inline-block item-menu"
         >
           <a
             href="#"
