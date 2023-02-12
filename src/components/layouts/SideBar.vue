@@ -148,7 +148,7 @@ export default {
         },
         {
           id: "likedPlaylist",
-          name: "Liked Playlist",
+          name: "Liked Songs",
           icon: `<svg
             role="img"
             height="12"

@@ -38,10 +38,10 @@ export default {
 
       if (scrollPosition > 20) {
         navbar.classList.remove("bg-transparent");
-        navbar.classList.add("bg-dark");
+        navbar.classList.add("bg-navBg");
       } else {
         navbar.classList.add("bg-transparent");
-        navbar.classList.remove("bg-dark");
+        navbar.classList.remove("bg-navBg");
       }
     }
   }

@@ -1,6 +1,5 @@
 <template>
   <div
-    
     class="top-bar sticky top-0 w-full h-16 flex items-center justify-between px-8 py-4 z-10 bg-transparent"
   >
     <!-- This is the two nav button  -->
@@ -10,7 +9,7 @@
         :to="navButton.link"
         v-for="navButton in navButtons"
         :key="navButton.id"
-        class="bg-black p-2 rounded-full"
+        class="bg-navButton p-2 rounded-full"
       >
         <span v-html="navButton.icon"></span>
       </router-link>
