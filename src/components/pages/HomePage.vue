@@ -8,7 +8,14 @@
       <section>
         <!-- This is the Recently played -->
 
-        <base-header :name="'Recently played'"></base-header>
+        <base-header :name="'Recently played'">
+          <router-link
+            to="/recently"
+            class="text-sm text-lightest uppercase hover:underline tracking-wide font-semibold"
+          >
+            Show all
+          </router-link>
+        </base-header>
 
         <!-- This is list recent songs -->
         <div

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bg-black h-full w-60">
+    <div class="side-bar bg-black h-full w-60">
       <!-- This is logo -->
 
       <div class="pl-6 py-6">

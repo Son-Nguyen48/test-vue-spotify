@@ -53,6 +53,7 @@
       >
         {{ cardInfo.artist }}
       </h2>
+      <slot name="cardType"></slot>
     </router-link>
   </div>
 </template>
