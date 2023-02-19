@@ -9,6 +9,7 @@
                 class="outline-none text-sm w-full"
                 type="text"
                 placeholder="What do you want to listen to?"
+                v-model="inputValue"
               />
             </form>
           </div>
@@ -32,6 +33,7 @@
           </div>
 
           <div
+            v-if="inputValue"
             class="absolute top-1 left-72"
             style="transform: translateX(60%)"
           >
@@ -57,7 +59,7 @@
 
     <!-- This is the Search result history  -->
 
-    <section>
+    <section v-if="!inputValue">
       <base-header :name="'Recent searches'"></base-header>
       <div
         class="grid px-8 gap-4"
@@ -69,7 +71,7 @@
         <base-card
           v-for="history in historys"
           :key="history.title"
-          :card-info="history"
+          :cardInfo="history"
         >
           <div
             class="absolute top-2 right-2 h-8 w-8 bg-dark opacity-60 rounded-full flex items-center justify-center"
@@ -94,7 +96,7 @@
       </div>
     </section>
 
-    <section>
+    <section v-if="!inputValue">
       <base-header :name="'Duyệt tìm tất cả'"></base-header>
 
       <div
@@ -128,6 +130,45 @@
         </div>
       </div>
     </section>
+
+    <!-- This is the result search  -->
+
+    <!-- This is the menu result search -->
+
+    <ul class="flex flex-1 justify-start mx-8 my-2">
+      <li
+        v-for="searchMenu in searchMenus"
+        :key="searchMenu.id"
+        class="text-white inline-block item-menu"
+      >
+        <a
+          href="#"
+          :class="`px-3 py-1 rounded-3xl inline-block mr-2 text-sm  ${
+            searchMenu.isActive === true ? 'bg-white text-dark' : 'bg-light'
+          }`"
+          >{{ searchMenu.name }}</a
+        >
+      </li>
+    </ul>
+
+    <section class="search-result grid">
+      <div style="grid-column: 1/3">
+        <p>Top Result</p>
+        <div
+          class="grid"
+          style="
+            grid-template-columns: repeat (2, minmax(0, 1fr));
+            min-width: 410px;
+            grid-gap: 24px;
+          "
+        >
+          <base-card :cardInfo="topResult">
+            <p>{{ topResult.type }}</p>
+          </base-card>
+          <div></div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -138,6 +179,37 @@ import BaseHeader from "../UI/BaseHeader.vue";
 export default {
   data() {
     return {
+      inputValue: "",
+      searchMenus: [
+        { id: "all", name: "All", link: "/all", isActive: true },
+        {
+          id: "artists",
+          name: "Artists",
+          link: "/artists",
+          isActive: false
+        },
+        { id: "songs", name: "Songs", link: "/songs", isActive: false },
+        { id: "albums", name: "Albums", link: "/albums", isActive: false },
+        {
+          id: "podcasts&shows",
+          name: "Podcasts and Shows",
+          link: "/podcasts&shows",
+          isActive: false
+        },
+        {
+          id: "playlists",
+          name: "Playlists",
+          link: "/playlists",
+          isActive: false
+        },
+        {
+          id: "genres&moods",
+          name: "Genres and Moods",
+          link: "/genres&moods",
+          isActive: false
+        },
+        { id: "profiles", name: "Profiles", link: "/profiles", isActive: false }
+      ],
       historys: [
         {
           src: "https://i.scdn.co/image/ab67616d00001e020f3abcbf0e79cacac2df44cc",
@@ -161,6 +233,14 @@ export default {
           link: "/playlist/lana-del-rey-mix"
         }
       ],
+      topResult: {
+        id: "boxibo",
+        src: "https://i.scdn.co/image/ab67616d00001e02be0ac2aa3ed0047463210db1",
+        title: "Bo Xì Bo",
+        artist: "Hoàng Thuỳ Linh",
+        type: "Song",
+        link: "/song/boxibo"
+      },
       colors: [
         { id: "orange", codeColor: "#E13300" },
         { id: "darkblue", codeColor: "#1E3264" },

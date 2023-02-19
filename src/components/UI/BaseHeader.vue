@@ -7,12 +7,7 @@
       {{ name }}
     </router-link>
 
-    <router-link
-      to="/recently"
-      class="text-sm text-lightest uppercase hover:underline tracking-wide font-semibold"
-    >
-      Show all
-    </router-link>
+    <slot></slot>
   </div>
 </template>
 

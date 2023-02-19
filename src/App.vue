@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="grid" style="grid-template-rows: 527px 90px">
+    <div class="main grid">
       <div class="flex">
         <side-bar></side-bar>
         <div
@@ -34,7 +34,7 @@ export default {
       const navbar = document.querySelector(".top-bar");
       const mainContent = document.getElementById("main-content");
       const scrollPosition = mainContent.scrollTop;
-      console.log(scrollPosition);
+      // console.log(scrollPosition);
 
       if (scrollPosition > 20) {
         navbar.classList.remove("bg-transparent");

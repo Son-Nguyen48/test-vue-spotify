@@ -1,0 +1,37 @@
+.main {
+  grid-template-rows: 527px 90px;
+}
+
+.search-result {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-gap: 24px;
+  min-width: 410px;
+}
+
+@media (min-width: 1440px) {
+  .main {
+    grid-template-rows: 810px 90px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .main {
+    grid-template-rows: 1250px 90px;
+  }
+
+  .side-bar {
+    width: 500px;
+
+    .px-6 .text-sm {
+      font-size: 1.875rem /* 30px */;
+      line-height: 2.25rem /* 36px */;
+    }
+
+    .mx-5.py-2 {
+      .text-white {
+        font-size: 1.875rem /* 30px */;
+        line-height: 2.25rem /* 36px */;
+      }
+    }
+  }
+}
